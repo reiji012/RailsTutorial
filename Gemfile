@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
 gem 'rails',        '5.1.6'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
@@ -11,6 +13,7 @@ gem 'jbuilder',     '2.7.0'
 
 
 group :development, :test do
+  # gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
   
 end
@@ -22,9 +25,9 @@ group :development do
   gem 'spring-watcher-listen', '2.0.1'
 end
 
-group :production do
-  gem 'pg', '0.20.0'
-end
+# group :production do
+#   gem 'pg', '0.20.0'
+# end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
